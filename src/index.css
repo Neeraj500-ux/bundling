@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --color-ink: #060b18;
+  --color-navy: #0b1730;
+  --color-navy-light: #101f42;
+  --color-royal: #1d3fe0;
+  --color-cyan: #22d3ee;
+  --color-pitch: #1f7a4d;
+  --color-pitch-light: #3cb371;
+  --color-gold: #e8b54c;
+  --color-chalk: #f4f7fb;
+  --color-mist: #93a4c3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-chalk);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-light);
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(244, 247, 251, 0.35);
+  color: transparent;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-mist);
+  opacity: 0.5;
+  width: 7px;
+  height: 7px;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-cyan);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
